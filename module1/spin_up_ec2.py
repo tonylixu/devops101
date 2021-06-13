@@ -28,9 +28,11 @@ def create_ec2_instance(session: boto3.Session):
                 },
             ],
             ImageId='ami-0d5eff06f840b45e9',
-            InstanceType='t2.micro',
+            InstanceType='t2.medium',
             MaxCount=1,
             MinCount=1,
+            KeyName='devops101',
+            SecurityGroups=['devops101-sg'],
             TagSpecifications=[
                 {
                     'ResourceType': 'instance',
